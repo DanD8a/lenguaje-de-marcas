@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="primero">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga est magnam ab aliquid. Fugit soluta delectus quam praesentium repudiandae reiciendis?</div>
+    <div id="segundo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, quae.</div>
+    <div name="tercero">Lorem ipsum dolor sit amet.</div>
+    <form action="">
+        <label for="">Nombre</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <img id="foto" style="width:200px;" src="https://cdn.pixabay.com/photo/2025/11/09/14/12/santa-claus-9946251_1280.jpg"/>
+    </form>
+    <script>
+
+        let misdivs= document.getElementsByTagName("div");
+        for(let index = 0; index < misdivs.length; index++){
+            console.log(misdivs[index].innerHTML);
+            //misdivs[index].style.textTransform = "uppercase";
+            misdivs[index].innerHTML=misdivs[index].innerHTML.toUpperCase();
+        }
+    </script>
+</body>
+</html>

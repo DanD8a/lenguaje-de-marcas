@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <p id="parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus eaque amet labore voluptatem optio, deserunt quam laudantium quis velit nostrum neque, voluptate repudiandae! Nihil officia voluptatibus eveniet consectetur minus ea nostrum blanditiis quos, nesciunt quod excepturi animi, nam labore suscipit id expedita illum laborum voluptas sapiente ex aut soluta repellendus?</p>
+
+    <button onclick="aumentar()">+ letra</button>
+    <button onclick="disminuir()">- letra</button>
+
+   <script>
+    let size= 16;
+    function aumentar(){
+        let miparrafo = document.getElementById("parrafo");
+        size++;
+        miparrafo.style.fontSize = size+"px";
+    }
+    function disminuir(){
+        let miparrafo = document.getElementById("parrafo");
+        size--;
+        miparrafo.style.fontSize = size+"px";
+    }
+
+   </script>
+</body>
+</html>

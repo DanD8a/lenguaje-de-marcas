@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let veinte= new Array(20);
+
+        for(let index = 0; index<veinte.length;index++){
+            veinte[index]=parseInt(prompt("Introduce un numero")); 
+        }
+        let buscar=parseInt(prompt("Introduce un a BUSCAR"));
+        let encontrado = veinte.find((element) => element == buscar);
+        let indiceEncontrado = veinte.findIndex((element) => element == buscar);
+        document.write("Elemento encontrado: "+encontrado+"<br>");
+        document.write("Indice: "+indiceEncontrado+"<br>");
+    </script>
+</body>
+</html>
+

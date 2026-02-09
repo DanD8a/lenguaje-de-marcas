@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let miarray = new Array(5);
+        miarray[1] = 192;
+        miarray[2] = "victor";
+
+        console.log(miarray);
+
+        let miarray2=[];
+        miarray2[1]=18282;
+        miarray2.push("victor2");
+        console.log(miarray2);
+        miarray2.pop();
+        console.log(miarray2);
+        miarray2.push("Flor");
+        miarray2.push(true);
+        miarray2.push(12.2);
+        miarray2.push(67);
+        miarray2[25]="final";
+
+        for(let index =0; index < miarray2.length;index++){
+            document.write("posicion["+index+"]: "+miarray2[index]+"<br>");
+        }
+        miarray2.forEach(element => {
+            document.write("valor: "+element+"<br>");
+        });
+    </script>
+</body>
+</html>

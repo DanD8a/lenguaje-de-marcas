@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fetch("https://randomuser.me/api/?results=2")
+        .then(response => response.json())
+        .then(datos => {
+            console.log(datos.results);
+            for (let index = 0; index < datos.results.length; index++) {
+                //console.log(datos.results[index].name.first)
+                let persona = datos.results[index];
+                console.log(persona.name.first);
+                //nombre
+                //edad
+                console.log(persona.dob.age);
+                //email
+                console.log(persona.email);
+                //foto
+                console.log(persona.picture.large);
+            }
+        })
+    </script>
+</body>
+</html>

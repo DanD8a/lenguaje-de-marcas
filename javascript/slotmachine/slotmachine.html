@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Slot Machine</title>
+  <!--Daniel Ochoa Delgado-->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #222;
+      color: white;
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    .slot-machine {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .slot {
+      width: 120px;
+      height: 120px;
+      border: 3px solid gold;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .credits {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .mensaje {
+      margin-top: 15px;
+      font-size: 18px;
+      min-height: 24px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Slot Machine</h1>
+
+  <div class="slot-machine">
+    <div class="slot"><img id="slot1" src="cherry.png"></div>
+    <div class="slot"><img id="slot2" src="bell.png"></div>
+    <div class="slot"><img id="slot3" src="lemon.png"></div>
+  </div>
+
+  <button id="girar">Tirar</button>
+  <button id="insertarMoneda">Insertar moneda</button>
+  
+  <div class="credits">
+    Créditos: <span id="credits">0</span>
+  </div>
+
+  <div class="mensaje" id="mensaje"></div>
+
+  <script>
+    
+    const images = [
+        'cherry.png',
+        'lemon.png',
+        'coin.png',
+        'bell.png'
+    ];
+
+    const slot1 = document.getElementById('slot1');
+    const slot2 = document.getElementById('slot2');
+    const slot3 = document.getElementById('slot3');
+
+    const creditsEl = document.getElementById('credits');
+    const messageEl = document.getElementById('mensaje');
+
+    let credits = 0;
+    let spinning = false;
+
+    document.getElementById('insertarMoneda').addEventListener('click', () => {
+      credits++;
+      actualizarCreditos();
+      messageEl.textContent = '!Moneda insertada!';
+    });
+
+    document.getElementById('girar').addEventListener('click', () => {
+      if (credits <= 0) {
+        messageEl.textContent = 'No tienes créditos.';
+        return;
+      }
+
+      if (spinning) return;
+
+      credits--;
+      actualizarCreditos();
+      spinning = true;
+      messageEl.textContent = 'Girando...';
+
+      const interval1 = girarSlot(slot1);
+      const interval2 = girarSlot(slot2);
+      const interval3 = girarSlot(slot3);
+
+      setTimeout(() => clearInterval(interval1), 1000);
+      setTimeout(() => clearInterval(interval2), 1500);
+      setTimeout(() => {
+        clearInterval(interval3);
+        spinning = false;
+        checkWin();
+      }, 2000);
+    });
+
+    function girarSlot(slotImg) {
+      return setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        slotImg.src = images[randomIndex];
+      }, 100);
+    }
+
+    function checkWin() {
+      if (
+        slot1.src === slot2.src &&
+        slot2.src === slot3.src
+      ) {
+        credits += 5;
+        messageEl.textContent = '¡PREMIO! +5 créditos';
+      } else {
+        messageEl.textContent = 'No hay premio';
+      }
+
+      actualizarCreditos();
+    }
+
+    function actualizarCreditos() {
+      creditsEl.textContent = credits;
+    }
+  </script>
+
+</body>
+</html>

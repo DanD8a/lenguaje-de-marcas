@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+
+        .container{
+            display:flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            gap: 20px;
+            background-color: #f5c983;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(246, 246, 245, 0.5)), url("banner.jpg");
+            padding-top: 5%;
+            padding-bottom: 4%;
+            flex-wrap: wrap;
+        }
+
+        .header a {
+            flex: 1;
+            max-width: 200px;
+            max-height:50px;
+            font-size: 25px;
+            background-color: #f5c983;
+            border-radius: 12px;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .header a:hover {
+            background-color: #f1b957;
+        }
+
+        .header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        body{
+            background-color: #191a1c;          
+        }
+
+        .tabla{
+            background-color: #77471a;
+            padding: 10px;
+            padding-bottom:5%;
+        }
+
+        .tabla h1{
+            text-align: center;
+        }
+
+        .galeria{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap:10px;
+            column-gap:10px;
+        }
+
+        .menu-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .menu-item img {
+            width:400px;
+            height:400px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .menu-item .desc {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6); 
+            opacity: 0;
+            text-align: center;
+            padding: 20px;
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .menu-item:hover img {
+            opacity: 0.4;
+        }
+
+        .menu-item:hover .desc {
+            opacity: 1;
+        }
+
+        .footer{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items:center;
+            font-size:20px;
+            color:beige;
+            text-align: center;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: rgba(245, 201, 131, 0.95);
+            color: #000;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            padding: 15px 20px;
+            font-size: 14px;
+            line-height: 1.4;
+            z-index: 1000;
+        }
+
+        .cookie-container a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .cookie-container button.cookie-button {
+            margin-top: 10px;
+            background-color: #f1b957;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cookie-container button.cookie-button:hover {
+            background-color: #dba74b;
+        }
+
+        /* Tablets */
+        @media (max-width: 1024px) {
+            .header {
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 4% 2%;
+            }
+
+            .header a {
+                font-size: 20px;
+                padding: 10px 20px;
+                max-width: 160px;
+            }
+
+            .menu-item img {
+                width: 300px;
+                height: 300px;
+            }
+
+            .cookie-container {
+                width: 260px;
+                right: 10px;
+                bottom: 10px;
+                font-size: 13px;
+            }
+        }
+
+        /* Smartphones */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 5% 0;
+            }
+
+            .header a {
+                width: 80%;
+                font-size: 18px;
+                padding: 10px 0;
+                max-width: none;
+            }
+
+            .header img {
+                max-width: 120px;
+            }
+
+            .galeria {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-item img {
+                width: 90%;
+                height: auto;
+            }
+
+            .menu-item .desc {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .footer {
+                font-size: 16px;
+                padding: 15px;
+            }
+
+            .cookie-container {
+                position: fixed;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                font-size: 13px;
+                padding: 10px;
+            }
+        }
+
+        /* Extra pequeñas */
+        @media (max-width: 480px) {
+            .header a {
+                font-size: 16px;
+                padding: 8px;
+            }
+
+            .menu-item img {
+                width: 100%;
+                height: auto;
+            }
+
+            .cookie-container {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="principal.html">Inicio</a>
+            <a href="menu.html">Menu</a> 
+            <img src="logo.png" alt="Logo">
+            <a href="reserva.html">Reserva</a>
+            <a href="blank.html">Sobre Nosotros</a>
+        </div>
+
+        <div class="tabla">
+            <h1>NUESTRO MENU</h1>
+            <div class="galeria">
+                <div class="menu-item">
+                    <img src="img/1.jpg" alt="Plato 1">
+                    <div class="desc">Aperitivo - 3€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/2.jpg" alt="Plato 2">
+                    <div class="desc">Fideua de Habas - 12€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/3.jpg" alt="Plato 3">
+                    <div class="desc">Crepe Crujiente - 6€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/4.jpg" alt="Plato 4">
+                    <div class="desc">Arroz Bogavante - 16€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/5.jpg" alt="Plato 5">
+                    <div class="desc">Ensalada de Melón - 7€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/6.jpg" alt="Plato 6">
+                    <div class="desc">Fideua - 10€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/7.jpg" alt="Plato 7">
+                    <div class="desc">Terrina de Calabacín - 11€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/8.jpg" alt="Plato 8">
+                    <div class="desc">Lasaña de Verduras - 10€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/9.jpg" alt="Plato 9">
+                    <div class="desc">Pastel de Higos - 12€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/10.jpg" alt="Plato 10">
+                    <div class="desc">Paella de Foie - 16€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/11.jpg" alt="Plato 11">
+                    <div class="desc">Tagliatelle al Nero - 12€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/12.jpg" alt="Plato 12">
+                    <div class="desc">Ensalada de Pollo - 8€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/13.jpg" alt="Plato 13">
+                    <div class="desc">Paella Valenciana - 16€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/14.jpg" alt="Plato 14">
+                    <div class="desc">Bombones de Foie - 7€</div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/15.jpg" alt="Plato 15">
+                    <div class="desc">Solomillo de Buey - 14€</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-container">
+            <p>
+                🍪 Usamos cookies para mejorar tu experiencia con nuestro sitio web.
+                <a href="cookies.html">Aprende más</a>
+            </p>
+            <button class="cookie-button">Entendido!</button>
+        </div>
+
+        <div class="footer">
+            Aviso legal | Política de privacidad | Política de cookies
+        </div>
+    </div>
+</body>
+</html>

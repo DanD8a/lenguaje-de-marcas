@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f2f4f8;
+            margin: 0;
+            padding: 40px;
+        }
+
+        #contenedor-fichas {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .ficha-persona {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 350px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .ficha-persona:hover {
+            transform: translateY(-5px);
+        }
+
+        .ficha-persona h2 {
+            color: #333;
+        }
+
+        .ficha-persona p {
+            color: #555;
+        }
+
+        .ficha-persona strong {
+            color: #000;
+        }
+
+        .ficha-persona img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .marco {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .marco img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        #btn-volver {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+        }
+
+        #btn-volver:hover {
+            background-color: #555;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button id="btn-volver" onclick="mostrarSets()">Volver a sets</button>
+    <div id="contenedor-fichas"></div>
+    <script>
+
+        mostrarSets();
+
+        function mostrarSets(){
+
+            document.getElementById("contenedor-fichas").innerHTML="";
+            document.getElementById("btn-volver").style.display="none";
+
+            fetch("https://api.tcgdex.net/v2/en/sets/")
+            .then(response => response.json())
+            .then(datos => {
+                console.log(datos);
+
+                for (let i = 0; i < datos.length; i++) {
+                    let set = datos[i];
+
+                    document.getElementById("contenedor-fichas").innerHTML += `
+                        <div class="ficha-persona">
+                            <div class="marco">
+                                <button onclick="entrarSet('${set.id}')"><img src="${set.logo}.png" alt=""></button>
+                            </div>
+                            <div class="texto">
+                                <h2>${set.name}</h2>
+                                <p><strong>Total Cartas: </strong>${set.cardCount.total}</p>
+                            </div>
+                        </div>
+                    `;
+                }
+            })
+        }
+
+
+        function entrarSet(setId){
+            
+            document.getElementById("contenedor-fichas").innerHTML = "";
+            document.getElementById("btn-volver").style.display = "block";
+
+            
+            fetch("https://api.tcgdex.net/v2/en/sets/"+setId)
+            .then(response => response.json())
+            .then(datos => {
+                const contenedor = document.getElementById("contenedor-fichas");
+                contenedor.innerHTML = "";
+                datos.cards.forEach(card => {
+                contenedor.innerHTML +=
+                        "<div class='ficha-persona'>" +
+                            "<div class='marco'>" +
+                                "<img src='" + card.image + "/low.png' alt=''>" +
+                            "</div>" +
+                            "<div class='texto'>" +
+                                "<h2>" + card.name + "</h2>" +
+                                "<h3> Nº Carta: " + card.localId + "</h3>" +
+                            "</div>" +
+                        "</div>";
+                });
+            });
+            /*
+            contenedor.innerHTML += `...`;
+            fetch("https://api.tcgdex.net/v2/en/sets/swsh3")
+            .then(response => response.json())
+            .then(datos => {
+                console.log(datos);
+                for (let i = 0; i < datos.length; i++) {
+                    let set = datos[i];
+                    contenedor.innerHTML = ""; // limpia todo
+                    
+                    document.getElementById("contenedor-fichas").innerText += `
+                    <div class="ficha-persona">
+                        <div class="marco">
+                            <img src="${set.logo}.png" alt=""></button>
+                        </div>
+                        <div class="texto">
+                            <h2>${set.cards.name}</h2>
+                            <p><strong>Total Cartas: </strong>${set.cardCount.total}</p>
+                        </div>
+                    </div>
+                `;
+                }
+            })*/
+        }
+    </script>
+</body>
+</html>

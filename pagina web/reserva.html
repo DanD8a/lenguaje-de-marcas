@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+    <style>
+        .container{
+            display:flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            gap: 20px;
+            background-color: #f5c983;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(246, 246, 245, 0.5)), url("banner.jpg");
+            padding-top: 5%;
+            padding-bottom: 4%;
+            flex-wrap: wrap;
+        }
+
+        .header a {
+            flex: 1;
+            max-width: 200px;
+            max-height:50px;
+            font-size: 25px;
+            background-color: #f5c983;
+            border-radius: 12px;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .header a:hover {
+            background-color: #f1b957;
+        }
+
+        .header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        body{
+            background-color: #191a1c;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .tabla{
+            display:flex;
+            flex-direction: row;
+            background-color: #f5c983;
+            padding: 2% 0 5% 0;
+            justify-content: center;
+            align-content: space-around;
+            gap:20px;
+        }
+
+        .tabla h1{
+            text-align: center;
+        }
+
+        .formulario{
+            border:3px solid #77471a;
+            border-radius: 12px;
+            display:grid;
+            grid-template-columns: auto auto;
+            gap: 10px;
+            padding: 20px;
+            background-color: #fff3d1;
+        }
+
+        .formulario>div{
+            display:flex;
+            flex-direction: row;
+            font-size: larger;
+            align-items: center;
+        }
+
+        .formulario input[type="text"],
+        .formulario input[type="date"],
+        .formulario input[type="number"],
+        .formulario input[type="color"],
+        .formulario textarea {
+            width: 100%;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .formulario input[type="submit"],
+        .formulario input[type="reset"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background-color: #f1b957;
+        }
+
+        .formulario input[type="submit"]:hover,
+        .formulario input[type="reset"]:hover {
+            background-color: #dba74b;
+        }
+
+        .footer{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            font-size:20px;
+            color:beige;
+            padding: 20px;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        /* Tablets */
+        @media (max-width: 1024px) {
+            .header a {
+                font-size: 20px;
+                padding: 10px 20px;
+                max-width: 160px;
+            }
+
+            .header img {
+                max-width: 130px;
+            }
+
+            .formulario {
+                grid-template-columns: 1fr 1fr;
+                padding: 15px;
+            }
+        }
+
+        /* Smartphones */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 5% 0;
+            }
+
+            .header a {
+                width: 80%;
+                font-size: 18px;
+                padding: 10px 0;
+                max-width: none;
+            }
+
+            .header img {
+                max-width: 120px;
+            }
+
+            .tabla {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .formulario {
+                grid-template-columns: 1fr;
+                width: 90%;
+                padding: 15px;
+            }
+
+            .formulario>div {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .formulario input[type="submit"],
+            .formulario input[type="reset"] {
+                width: 48%;
+                margin-top: 10px;
+            }
+        }
+
+        /* Extra pequeñas */
+        @media (max-width: 480px) {
+            .header a {
+                font-size: 16px;
+                padding: 8px;
+            }
+
+            .formulario input[type="submit"],
+            .formulario input[type="reset"] {
+                width: 100%;
+            }
+
+            .formulario textarea {
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <a href="principal.html">Inicio</a>
+        <a href="menu.html">Menu</a>
+        <img src="logo.png" alt="Logo">
+        <a href="reserva.html">Reserva</a>
+        <a href="blank.html">Sobre Nosotros</a>
+    </div>
+
+    <div class="tabla">
+        <form>
+            <h1>RESERVA CON NOSOTROS</h1>
+            <div class="formulario">
+                <div><label for="nombre">Nombre</label></div><div><input type="text" id="nombre" name="usuario"/></div>
+                <div><label for="fecha">Fecha Reserva</label></div><div><input type="date" id="fecha" name="fecha"/></div>
+                <div><label for="comentarios">Comentarios personales</label></div><div><textarea name="comentarios" id="comentarios" rows="6" cols="40" placeholder="Escriba aquí sus comentarios"></textarea></div>
+                <div><label for="color">Color preferido</label></div><div><input type="color" id="color" name="color"/></div>
+                <div><label for="comensales">Número comensales</label></div><div><input type="number" id="comensales" name="comensales"/></div>
+                <div><label for="terminos">Términos y condiciones</label></div><div><input type="checkbox" id="terminos" name="terminos"/></div>
+                <div><input type="submit" value="Hacer reserva"/></div> 
+                <div><input type="reset" value="Borrar los datos introducidos"/></div>
+            </div>
+        </form>
+    </div>
+
+    <div class="footer">
+        Aviso legal | Política de privacidad | Política de cookies
+    </div>
+</div>
+</body>
+</html>

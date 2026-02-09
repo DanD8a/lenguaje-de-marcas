@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        img.disabled {
+            filter: grayscale(100%);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <h1>ELIGE UNA MANO</h1>
+        <img width="10%" onclick="comprobar(1)" src="piedra.png" value="1">
+        <img width="10%" onclick="comprobar(2)" src="tijera.png" value="2">
+        <img width="10%" onclick="comprobar(3)" src="papel.png" value="3">
+        <div id="imagenCPU">
+
+        </div>
+        <p id="resultado"></p>
+        <p id="victoria"></p>
+    </div>
+    
+    <script src="juegoPapel.js"></script>
+</body>
+</html>

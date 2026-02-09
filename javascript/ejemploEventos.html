@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ejemploEventos.js"></script>
+</head>
+<body>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, animi excepturi molestiae doloribus quibusdam architecto inventore iusto ut adipisci illo debitis praesentium consectetur hic, nisi neque ipsa ducimus et optio magni voluptates. Omnis voluptas laborum harum ipsa veritatis dignissimos necessitatibus id corporis cupiditate! Quas consequuntur nobis ipsa perferendis eum culpa.
+    </div>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugit ducimus modi deleniti architecto. Voluptates vel ab similique culpa ullam!
+    </div>
+    <img id="mifoto" style="width: 200px" src="https://cdn.pixabay.com/photo/2025/11/29/15/52/reindeer-9985063_1280.jpg"/>
+    <button onclick="cambiaFoto()">Pulsame</button>
+    <div>
+        <form action="" onsubmit="return comprobarAcceso()">
+            Nombre:<input type="text" name="nombre" id="nombre">
+            <br/>
+            Password: <input type="password" name="pass" id="pass">
+            <br/>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    <div>
+        <img onmouseover="agrandarImg(this)" width="100px" src="https://cdn.pixabay.com/photo/2025/12/08/11/05/pinecone-10001896_1280.jpg" alt="">
+        <img onmouseover="agrandarImg(this)" width="100px" src="https://cdn.pixabay.com/photo/2016/04/29/12/40/sunset-1360830_1280.jpg" alt="">
+        <img onmouseover="agrandarImg(this)" width="100px" src="https://cdn.pixabay.com/photo/2017/08/20/18/59/sky-2662791_1280.jpg" alt="">
+        <img onmouseover="agrandarImg(this)" width="100px" src="https://cdn.pixabay.com/photo/2020/07/13/09/17/moon-5400190_1280.jpg" alt="">
+        <img onmouseover="agrandarImg(this)" width="100px" src="https://cdn.pixabay.com/photo/2018/04/27/17/03/steam-locomotive-3355224_1280.jpg" alt="">
+    </div>
+    <div id="imagenGrande">
+
+    </div>
+</body>
+</html>

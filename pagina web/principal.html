@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <style>
+        .container{
+            display:flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            gap: 20px;
+            background-color: #f5c983;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(246, 246, 245, 0.5)), url("banner.jpg");
+            padding-top: 5%;
+            padding-bottom: 4%;
+            flex-wrap: wrap;
+        }
+
+        .header a {
+            flex: 1;
+            max-width: 200px;
+            max-height:50px;
+            font-size: 25px;
+            background-color: #f5c983;
+            border-radius: 12px;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .header a:hover {
+            background-color: #f1b957;
+        }
+
+        .header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        body{
+            background-color: #191a1c;          
+        }
+
+        .tabla{
+            display:grid;
+            grid-template-columns: auto auto;
+            gap: 10px;
+            background-color: #77471a;
+            padding: 10px;
+            padding-bottom:5%;
+        }
+
+        .tabla h1{
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .card{
+            padding:10px;
+            border:3px solid #77471a;
+            border-radius: 12px;
+            background-color: #f5c983;
+            font-size:large;
+        }
+
+        .footer{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items:center;
+            font-size:20px;
+            color:beige;
+            text-align: center;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: rgba(245, 201, 131, 0.95);
+            color: #000;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            padding: 15px 20px;
+            font-size: 14px;
+            line-height: 1.4;
+            z-index: 1000;
+        }
+
+        .cookie-container a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .cookie-container button.cookie-button {
+            margin-top: 10px;
+            background-color: #f1b957;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cookie-container button.cookie-button:hover {
+            background-color: #dba74b;
+        }
+
+        /* Tablets */
+        @media (max-width: 1024px) {
+            .header {
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 4% 2%;
+            }
+
+            .header a {
+                font-size: 20px;
+                padding: 10px 20px;
+                max-width: 160px;
+            }
+
+            .tabla {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .tabla h1 {
+                font-size: 40px;
+            }
+
+            .cookie-container {
+                width: 260px;
+                right: 10px;
+                bottom: 10px;
+                font-size: 13px;
+            }
+        }
+
+        /* Smartphones */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 5% 0;
+            }
+
+            .header a {
+                width: 80%;
+                font-size: 18px;
+                padding: 10px 0;
+                max-width: none;
+            }
+
+            .header img {
+                max-width: 120px;
+            }
+
+            .tabla {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
+
+            .card {
+                width: 90%;
+                margin-bottom: 15px;
+                font-size: medium;
+            }
+
+            .tabla h1 {
+                font-size: 32px;
+            }
+
+            .footer {
+                font-size: 16px;
+                padding: 15px;
+            }
+
+            .cookie-container {
+                position: fixed;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                font-size: 13px;
+                padding: 10px;
+            }
+        }
+
+        /* Extra pequeñas */
+        @media (max-width: 480px) {
+            .header a {
+                font-size: 16px;
+                padding: 8px;
+            }
+
+            .tabla h1 {
+                font-size: 26px;
+            }
+
+            .card {
+                font-size: small;
+                padding: 8px;
+            }
+
+            .cookie-container {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="principal.html">Inicio</a>
+            <a href="menu.html">Menu</a> 
+            <img src="logo.png" alt="Logo">
+            <a href="reserva.html">Reserva</a>
+            <a href="blank.html">Sobre Nosotros</a>
+        </div>
+
+        <div class="tabla">
+            <div class="card">
+                <h1>Almuerzos</h1>
+                <div>
+                    Disponemos de una amplia y variada selección de sabrosos bocadillos, preparados y servidos por un equipo humano profesional, rápido y eficaz. Todos los días del año, de lunes a domingo, incluido festivos (excepto navidad y año nuevo).
+                </div>
+            </div>
+            <div class="card">
+                <h1>Comidas</h1>
+                <div>
+                    Tenemos menú del día de lunes a viernes, con gran variedad de primeros, segundos y postres. También tienes la posibilidad de pedir en el momento alguno de nuestros arroces especiales; arroz con bogavante, arroz del senyoret, etc.
+                </div>
+            </div>
+            <div class="card">
+                <h1>Cenas</h1>
+                <div>
+                    Con todos los elementos para convertir una cena, en una verdadera experiencia; Un local climatizado amplio y espacioso, servicio rápido y una excelente cocina. Convierte las cenas con familia y amigos o con tu pareja, en una cena especial.
+                </div>
+            </div>
+            <div class="card">
+                <h1>Celebraciones</h1>
+                <div>
+                    No dudes en contar con nosotros para tus celebraciones más especiales. Damos servicio completo para bautizos, bodas y comuniones. Alta calidad con un precio muy ajustado.
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-container">
+            <p>
+                🍪 Usamos cookies para mejorar tu experiencia con nuestro sitio web.
+                <a href="cookies.html">Aprende más</a>
+            </p>
+            <button class="cookie-button">Entendido!</button>
+        </div>
+
+        <div class="footer">
+            Aviso legal | Política de privacidad | Política de cookies
+        </div>
+    </div>
+</body>
+</html>

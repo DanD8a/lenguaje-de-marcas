@@ -1,0 +1,32 @@
+.formulario{
+    width:300px;
+    display:flex;
+    flex-direction: column;
+    border-radius: 12px;
+    gap: 10px;
+    padding: 20px;
+    background-color: #23d1a6;
+}
+.formulario>div{
+    display:flex;
+    flex-direction: row;
+    font-size: larger;
+    align-items: center;
+}
+input,select{
+    width:270px;
+    height:20px;
+}
+.formulario .boton{
+    justify-content: center;
+}
+.formulario input[type="submit"] {
+    justify-content: center;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4caf50;
+    height:35px;
+    width:70px;
+}

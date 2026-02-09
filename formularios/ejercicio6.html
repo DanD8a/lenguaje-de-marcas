@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <h1>Información sobre el producto</h1>
+        <fieldset>
+            <legend>
+                Datos básicos
+            </legend>
+            <div>
+                <label for="name">Nombre</label><br>
+                <input type="text" id="name">
+                <br>
+                <br>
+            </div>
+            
+            <div>
+                <label for="desc">Descripción</label><br>
+                <textarea id="desc"></textarea>
+            </div>
+            <br>
+            <div>
+                Foto: <input type="file" name="" id="">
+            </div>
+            <br>
+            <div>
+                <input type="checkbox" name="siNo" id="marcar">
+                <label for="marcar">Añadir contador de visitas</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Datos económicos</legend>
+            <div>
+                <label for="price">Precio</label>
+                <input type="number" name="precio" id="price"> €
+                <label for="taxes">&nbsp; &nbsp; &nbsp; Impuestos</label>
+                <select name="impuesto" id="taxes">
+                    <option value="op1">4%</option>
+                    <option value="op2">7%</option>
+                    <option value="op3">16%</option>
+                    <option value="op4">25%</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="promocion">Promoción</label>
+                <br>
+                <input type="radio" name="promocion">Ninguno<br>
+                <input type="radio" name="promocion">Transporte gratuito<br>
+                <input type="radio" name="promocion">Descuento<br>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

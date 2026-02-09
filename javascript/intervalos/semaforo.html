@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function funcionRojo(){
+            console.log('Rojo');
+            setTimeout(funcionAmarillo,3000);
+        }
+        function funcionAmarillo(){
+            console.log('Amarillo');
+            setTimeout(funcionVerde,1000);
+        }
+        function funcionVerde(){
+            console.log('Verde');
+            setTimeout(funcionRojo,3000);
+        }
+        funcionRojo();
+        
+    </script>
+</body>
+</html>

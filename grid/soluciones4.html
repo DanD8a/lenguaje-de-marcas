@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+                height: 600px;  
+                display: grid;
+                grid-template-areas:    "header     header"
+                                        "sidebar    article"
+                                        "footer     footer"; 
+                grid-template-rows: 40px 1fr 40px; 
+                grid-template-columns: 2fr 5fr;
+                grid-gap: 5px; 
+            }
+            body > div{ border: 1px solid;}
+            .header{ 
+                grid-area: header; background-color: green;}
+            .sidebar{
+                grid-area: sidebar; background-color: red;}
+            .article{ 
+                background-color: rgb(221, 226, 225);
+                display: grid;
+                grid-template-areas: "artheader artheader"
+                                    "x         x"
+                                    "content content"; 
+                grid-template-rows: 40px 1fr 1fr; 
+                grid-template-columns: 1fr 1fr;
+            }
+            @media screen and (max-width: 400px) {
+                .article{background-color: rgb(221, 226, 225);
+                display: grid;
+                grid-template-areas: "artheader"
+                                    "x"
+                                    "x"
+                                    "content"; 
+                grid-template-rows: 40px 1fr 1fr 2.5fr; 
+                grid-template-columns: 1fr;}
+            }
+ 
+                .artheader{ margin: 5px ;grid-area: artheader; border: 1px solid; background-color: pink;}
+                .artmain{  margin: 5px ;border: 1px solid; background-color: orange;}
+                .content{
+                    grid-area: content;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                }
+                @media screen and (max-width: 400px) {
+                .content{
+                    grid-area: content;
+                    display: grid;
+                    grid-template-columns:1fr 1fr 1fr;
+                    grid-template-rows:1fr 1fr 1fr 1fr;
+                    }
+                }
+                .content div{background-color: blueviolet; margin: 5px; border: 1px solid;}
+                
+                .footer{ 
+                grid-area: footer; background-color: green;}
+        
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div class="article">
+        <div class="artheader"> </div>
+        <div class="artmain"> </div>
+        <div class="artmain"> </div>
+        <div class="content"> 
+            <div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            display:flex;
+            border: 1px solid pink;
+            flex-direction:row
+        }
+        .contenedor div{
+            border: 1px solid blue;
+        }
+        .contenedor2{
+            display:flex;
+            border: 1px dotted green;
+            flex-direction:row-reverse;
+        }
+        .contenedor3{
+            display:flex;
+            border: 1px dotted cyan;
+            justify-content: space-around;
+            height: 200px;
+            align-items: center;
+        }
+        .contenedor3 div{
+            border: 1px dotted yellow;
+            background-color: pink;
+            padding: 40px;
+        }
+        .contenedor4{
+            display:flex;
+            border: 1px dotted purple;
+            justify-content: space-around;           
+        }
+        .contenedor4 div:nth-child(1){
+            flex-grow:1;
+            border: 1px solid blue;
+        }
+        .contenedor4 div:nth-child(2){
+            flex-grow:2;
+            border: 1px solid rgb(123, 0, 255);
+        }
+        .contenedor4 div:nth-last-child(1){
+            flex-grow:1;
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor" >
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, architecto.</div>
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Three
+            <br>has
+            <br>extra
+            <br>text
+        </div>
+    </div>
+    <br>
+    <div class="contenedor2">
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, facilis?</div>
+    </div>
+    <br>    <br>
+    <div class="contenedor3">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+    </div>
+    <br>
+    <div class="contenedor4">
+        <div>One</div>
+        <div>Lorem, ipsum dolor sit</div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    </div>
+    <br>
+</body>
+
+</html>

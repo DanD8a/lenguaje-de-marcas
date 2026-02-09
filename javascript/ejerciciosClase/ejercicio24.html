@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let input = parseInt(prompt("Introduce un numero"));
+        for(let x=1;x<=input;x++){
+            for(let y=input-x;y>=1;y--){
+                document.write("&nbsp");
+            }
+            for(let j=1;j<=x;j++){
+                document.write(j);
+            }
+            for(let z=x-1;z>=1;z--){
+                document.write(z);
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

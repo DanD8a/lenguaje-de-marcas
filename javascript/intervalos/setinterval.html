@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numero=10;
+        function saludoPesado(){
+            console.log("hola " + numero);
+            numero--;
+            if(numero<0){
+                clearInterval(control);
+                console.log("Tiempo terminado");
+            }
+               
+        }
+        let control = setInterval(saludoPesado,2000);
+
+    </script>
+</body>
+</html>

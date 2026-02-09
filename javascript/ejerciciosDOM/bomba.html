@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <p id="contador"></p>
+    <div id="imagenGrande">
+        <img width="300px" src="https://cdn.pixabay.com/photo/2025/12/08/11/05/pinecone-10001896_1280.jpg" alt="">
+    </div>
+    <script>
+        let contador=document.getElementById("contador");
+        let divImagen = document.getElementById("imagenGrande");
+        let numero=4;
+        contador.innerHTML="<h1>"+5+"</h1>";
+        function saludoPesado(){
+            contador.innerHTML="<h1>"+numero+"</h1>";
+            numero--;
+            if(numero<0){
+                clearInterval(control);
+                contador.innerHTML="<h1>"+"¡Tiempo terminado!"+"</h1>";
+                divImagen.innerHTML = "<img src=" + nodoImagen.src +  " />"
+            }
+               
+        }
+        let control = setInterval(saludoPesado,1000);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display:flex;
+            justify-content: space-around;
+            height: 200px;
+        }
+        .contenedor{
+            display:flex;
+            border: 1px solid grey;
+            flex-direction:column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .contenedor div:nth-child(1){
+            display:flex;
+            color:white;
+            background-color: black;
+            padding: 30px;
+
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="contenedor" >
+            <div>Tarjeta Izquierda</div>
+            <div>Contenido del cuerpo</div>
+            <div>Contenido del cuerpo</div>
+            <div>Contenido del cuerpo</div>
+            <div>Pie</div>
+        </div>
+        <br>
+        <div class="contenedor">
+            <div>Tarjeta centro</div>
+            <div>Contenido del cuerpo</div>
+            <div>Pie</div>
+        </div>
+        <br>    <br>
+        <div class="contenedor">
+            <div>Tarjeta derecha</div>
+            <div>Contenido del cuerpo</div>
+            <div>Pie</div>
+    </div>
+    </div>
+
+</body>
+
+</html>

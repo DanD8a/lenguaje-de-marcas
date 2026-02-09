@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f2f4f8;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .contenedor-fichas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .ficha-persona {
+            background-color: #ffffff;
+            width: 250px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .ficha-persona:hover {
+            transform: translateY(-5px);
+        }
+
+        .ficha-persona h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .ficha-persona p {
+            margin: 6px 0;
+            color: #555;
+        }
+
+        .ficha-persona strong {
+            color: #000;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="contenedor-fichas"></div>
+    <script>
+        fetch("https://randomuser.me/api/?results=2")
+        .then(response => response.json())
+        .then(datos => {
+            console.log(datos.results);
+
+            for (let i = 0; i < datos.results.length; i++) {
+                let persona = datos.results[i];
+
+                document.getElementById("contenedor-fichas").innerHTML += `
+                    <div class="ficha-persona">
+                    <div class="marco">
+                        <img src="${persona.picture.medium}" alt="">
+                    </div>
+                    <h2>${persona.name.first}</h2>
+                    <p><strong>Email:</strong> ${persona.email}</p>
+                    <p><strong>Edad:</strong> ${persona.dob.age} años</p>
+                    </div>
+                `;
+            }
+            /*
+            for (let index = 0; index < datos.results.length; index++) {
+                let persona = datos.results[index];
+                document.getElementById("contenedor-fichas").innerHTML="<div class='ficha-persona'><div id='marco'><img id='thumbnail' src='' alt=''></div><h2 id='nombre'></h2><p><strong>Email: </strong><span id='email'></span></p><p><strong>Edad: </strong><span id='edad'></span> años</p></div></div>";
+                document.getElementById("nombre").innerText=persona.name.first;
+                console.log(persona.name.first);
+                document.getElementById("thumbnail").src= persona.picture.medium;
+                console.log(persona.picture.thumbnail)
+                document.getElementById("email").innerText=persona.email
+                document.getElementById("edad").innerText=persona.dob.age
+
+                logo
+                coleccion
+                numero de cartas
+                boton en el logo para entrar a la coleccion y ver las cartas
+                
+            }*/
+        })
+    </script>
+</body>
+</html>

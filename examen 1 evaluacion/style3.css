@@ -1,0 +1,105 @@
+.sobre{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+#logo{
+    width:200px;
+}
+
+#cajaDescubre{
+    background: linear-gradient(to right, #6f6ca7, #3faa8f);
+    height:200px;
+    display: flex;
+    justify-content: center;
+}
+
+#textoDescubre{
+    display:flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+}
+#textoDescubre div{
+    width:400px;
+}
+
+main{
+    margin:50px;
+}
+
+#fotoGeoIA{
+    width:700px;
+}
+
+#grid{
+    display:grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    padding-bottom:5%;
+}
+#grid>div{
+    width:375px;
+}
+#pareja{
+    width:125px;
+    margin-bottom:30px;
+}
+
+#eslogan{
+    color:#665c96;
+    font-size:x-large;
+    margin-bottom:20px;
+}
+#caja{
+    display:grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    padding-bottom:5%;
+}
+
+#caja>div:first-child{
+    font-size: x-large;
+    padding:20px;
+    color:#2596be;
+    width:375px;
+}
+
+#lista ul {
+  list-style-type: circle; 
+}
+
+#lista li {
+  margin-bottom: 10px;
+}
+
+footer{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    margin: 50px;
+    padding-bottom:5%;
+}
+
+.card{
+    display:flex;
+    flex-direction: column;
+    background-color: #112f5e;
+    color:white;
+    font-size: larger;
+    justify-content: center;
+    width:300px;
+    height:400px;
+    padding:40px;
+    border-radius: 24px;
+    text-align:center;
+}
+
+.card:hover{
+    background-color: #274c86;
+    transform: translateY(-10px);
+}
+.card img{
+    width:300px;
+}

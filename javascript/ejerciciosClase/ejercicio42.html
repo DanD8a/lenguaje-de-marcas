@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .celdanegra{
+            background-color: black;
+            padding:45px;
+        }
+        .celdablanca{
+            padding:45px;
+        }
+    </style>
+</head>
+<body>
+    <table style="border: 1px solid black;">
+        <script>
+            for(let filas=0;filas<8;filas++){
+                document.write("<tr>");
+                if(filas%2!=0){
+                    for(let columna=0;columna<8;columna++){
+                        if(columna%2==0){
+                            document.write("<td class='celdanegra'>"+"&nbsp"+"</td>");
+                        }else{
+                            document.write("<td class='celdablanca'>"+"&nbsp"+"</td>");
+                        } 
+                    }
+                }else{
+                    for(let columna=0;columna<8;columna++){
+                        if(columna%2!=0){
+                            document.write("<td class='celdanegra'>"+"&nbsp"+"</td>");
+                        }else{
+                            document.write("<td class='celdablanca'>"+"&nbsp"+"</td>");
+                        }
+                        
+                    }
+                }
+                
+                document.write("</tr>")
+            }
+        </script>
+    </table>
+</body>
+</html>

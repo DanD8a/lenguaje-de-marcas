@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{    
+            height: 150px;
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: "header header header";
+        }
+        .contenedor div{
+            color: white;
+            text-align: center;
+            align-content: center;
+            border: 1px solid white;
+            background-color: rgb(62, 143, 143);
+        }
+        .header{
+            grid-area: header;
+        }
+        .two{
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="header">Celda 1</div>
+        <div class="two">Celda 2</div>
+        <div>Celda 3</div>
+        <div>Celda 4</div>
+        <div>Celda 5</div>
+        <div>Celda 6</div>
+    </div>
+</body>
+</html>

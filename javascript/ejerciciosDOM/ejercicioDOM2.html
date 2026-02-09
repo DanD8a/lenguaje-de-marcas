@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <img src="" id="imagen"/>
+
+    <button onclick="cambiar()">Cambiar imagenes</button>
+
+   <script>
+    function cambiar(){
+        let imgArray = ["https://cdn.pixabay.com/photo/2025/11/26/22/55/mountain-9979198_1280.png", "https://cdn.pixabay.com/photo/2025/09/10/21/26/flying-9827070_1280.jpg", "https://cdn.pixabay.com/photo/2025/11/09/14/12/santa-claus-9946251_1280.jpg", "https://cdn.pixabay.com/photo/2025/01/03/13/43/house-9307915_1280.jpg", "https://preview.redd.it/9e5jeyzjfe7g1.jpeg?width=519&auto=webp&s=45edc813e6c01431081cd34763c924eb94cda0dd"]
+
+        let d = new Date();
+        let seconds = d.getSeconds();
+
+        let mifoto = document.getElementsByTagName("img");
+        mifoto[0].src = imgArray[seconds%5];
+    }
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        acceso();
+
+
+        function acceso(){
+            let maxCoches=50;
+            let coches=20;
+
+            let intentos=3;
+            let correcto=false;
+            let opcion=4;
+            do{
+                let codigo = prompt("Introduce el código secreto");
+                if(codigo=="1234"){
+                    correcto=true;
+                    do{
+                        console.log(`
+                        1. Plazas Disponibles
+                        2. Introducir nuevo coche
+                        3. Sacar un coche
+                        4. Salir del programa`);
+                        opcion = prompt("Introduce una opcion");
+                        if(opcion==1){
+                            mostrarPlazas(coches,maxCoches);
+                        }else if(opcion==2){
+                            coches= introducirCoche(coches, maxCoches)
+                        }else if(opcion==3){
+                            coches= eliminarCoche(coches, maxCoches);
+                        }else{
+                            console.log("Opcion no valida");
+                        }
+                    }while(opcion!=4)  
+                }else{
+                    intentos--;
+                    alert("Código Incorrecto");
+                }          
+
+            }while(intentos>0 && correcto==false);
+            if(intentos==0){
+                document.writeln("Acceso Denegado");
+            } 
+        }
+
+        function mostrarPlazas(coches, maxCoches){
+            console.log("Hay "+ (maxCoches-coches) + " plazas disponibles de " + maxCoches + " en total");
+        }
+        
+        function introducirCoche(coches, maxCoches){
+            if(coches<maxCoches){
+                coches++;
+                console.log("Ha entrado un nuevo coche");
+            }else{
+                console.log("El parking está lleno");
+            }
+
+            return coches;
+        }
+
+        function eliminarCoche(coches, maxCoches){
+            if(coches>0){
+                coches--;
+                console.log("Ha salido un coche del parking");
+            }else{
+                console.log("El parking está vacio");
+            }
+
+            return coches;
+        }
+    </script>
+</body>
+</html>

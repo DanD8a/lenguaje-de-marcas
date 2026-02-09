@@ -1,0 +1,52 @@
+body {
+  font-family: sans-serif;
+  background: #f8f9fa;
+  padding: 20px;
+}
+
+/* Shared container styles */
+.container {
+  display: flex;
+  background: #ddd;
+  border: 2px solid #aaa;
+  height: 150px;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+/* Shared item styles */
+.item {
+  background: #4a90e2;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+/* Demonstrate justify-content */
+.justify {
+  justify-content: space-between; /* Try: center, flex-start, space-around */
+  align-items: center;
+}
+
+/* Demonstrate align-items */
+.align {
+  justify-content: center;
+  align-items: center; /* Try: flex-start, center, stretch */
+}
+
+.tall { height: 100px; }
+.short { height: 40px; }
+
+/* Demonstrate align-content (multiple lines) */
+.wrap {
+  flex-wrap: wrap;
+  height: 300px;
+  align-content: flex-end; /* Try: center, stretch, flex-end */
+  justify-content: center;
+}

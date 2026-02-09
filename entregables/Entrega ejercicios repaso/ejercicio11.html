@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+
+    <style>
+        .botones{
+            text-align: center;
+        }
+        table, th, td {
+            border: 1px solid;
+        }
+ 
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Formulario de alta de usuario</h1>
+    </div>
+
+    <table>
+      
+        <tr>
+            <td colspan="2">
+                <label for="nuevoUsuario">Identificador de nuevo usuario</label>
+                <input type="text" id="usuario" name="usuario" value="usu_012345">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre">
+            </td>
+            <td>
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="pass">Contraseña</label><br/>
+                <input type="password" id="pass" name="pass" /> 
+            </td>
+            <td>
+                <label for="confirmarPass">Confirmar contraseña</label><br/>
+                <input type="password" id="ConfirmarPass" name="ConfirmarPass" /> 
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="sexo">Sexo</label>
+            </td>
+            <td>
+                <input type="radio" name="sexo" />Varon
+			    <input type="radio" name="sexo" />Mujer
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="aficion">Aficiones</label>
+            </td>
+            <td>
+                <input type="checkbox" name="deporte">Deporte <br>
+                <input type="checkbox" name="lectura">Lectura <br>
+                <input type="checkbox" name="cine">Cine <br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="pais">País</label>
+            </td>
+            <td>
+                <select name="paises" id="pais">
+                    <option value="francia">Francia</option>
+                    <option value="espania">España</option>
+                    <option value="inglaterra">Inglaterra</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="colores">Colores favoritos</label>
+            </td>
+            <td>
+                <select multiple name="colores" id="colores">
+                    <option value="rojo">Rojo</option>
+                    <option value="verde">Verde</option>
+                    <option value="azul">Azul</option>
+                </select>
+            </td>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="foto">Subir su foto</label>
+            </td>
+            <td>
+                <input type="file" id="files" name="files">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="comentarios">Comentarios personales</label>
+            </td>
+            <td>
+                <textarea name="comentarios" id="comentarios" rows="6" cols="40" placeholder="Escriba aquí sus comentarios"></textarea>
+            </td>
+        </tr>
+
+        <tr class="botones">
+            <td>
+                <input type="reset" id="reset" name="reset">
+            </td>
+            <td>
+                <input type="submit" id="submit" name="enviar" value="Enviar">
+            </td>
+        </tr>
+
+        <tr class="botones">
+            <td colspan="2" class="botones" >
+                <input disabled type="submit" id="editar" name="editar" value="Modificar datos del usuario">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roman Numeral Reel Game</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .story {
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .reels {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+
+    .reel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .display {
+      width: 60px;
+      height: 60px;
+      border: 2px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    #validateBtn {
+      margin-top: 15px;
+      font-size: 20px;
+      padding: 10px 25px;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="story">
+    <p><strong>As the <i>Emperor</i> said:</strong></p>
+
+    <p>
+      In the age of endless war, numbers decide victory as much as steel.
+      Chroniclers exaggerate, cowards diminish, and only wisdom reveals the truth.
+    </p>
+
+    <p>
+      Some claim I marched with <strong><span id="rA">MCX</span></strong> cohorts, boasting of impossible might.
+      Others whisper that I brought merely <strong><span id="rB">XXV</span></strong> or
+      <strong><span id="rC">LXX</span></strong>,
+      as if fear guided my hand. Fools speak in extremes to mislead those who cannot count.
+    </p>
+
+
+    <p>
+      I tell you this: I gathered what was necessary — no more, no less.
+      I relied upon the strength of <strong><span id="rD">XLV</span></strong>, supported by the precision of
+      <strong><span id="rE">XLI</span></strong> and the certainty of <strong><span id="rF">XII</span></strong>.
+      Together they formed a force neither bloated nor weak.
+    </p>
+
+    <p>
+      Read between the lies of war and the <i>pride</i> of the Emperor.
+      Don't let yourself get distracted, and you shall uncover the true number
+      that broke the enemy line.
+    </p>
+
+    <p>
+      I am the <i>noble Xenon</i>, emperor of Rome, ruler by decree of the Senate
+      and by the sword of my legions.
+    </p>
+  </div>
+
+  <div class="reels">
+    <!-- Reel 1 -->
+    <div class="reel">
+      <button onclick="move(0, -1)">▲</button>
+      <div class="display" id="r0"></div>
+      <button onclick="move(0, 1)">▼</button>
+    </div>
+
+    <!-- Reel 2 -->
+    <div class="reel">
+      <button onclick="move(1, -1)">▲</button>
+      <div class="display" id="r1"></div>
+      <button onclick="move(1, 1)">▼</button>
+    </div>
+
+    <!-- Reel 3 -->
+    <div class="reel">
+      <button onclick="move(2, -1)">▲</button>
+      <div class="display" id="r2"></div>
+      <button onclick="move(2, 1)">▼</button>
+    </div>
+  </div>
+
+  <button id="validateBtn" onclick="validateCombination()">Validate</button>
+
+  <div id="result"></div>
+
+  <script>
+    const symbols = ["I", "V", "X", "L", "C", "M"];
+    const reels = [0, 0, 0]; // current positions
+    const correct = [3, 0, 1]; // L, I, V
+
+    function updateDisplay() {
+      reels.forEach((pos, i) => {
+        document.getElementById(`r${i}`).textContent = symbols[pos];
+      });
+    }
+function shuffleStoryNumerals() {
+    const spans = [
+      document.getElementById("rA"),
+      document.getElementById("rB"),
+      document.getElementById("rC"),
+      document.getElementById("rD"),
+      document.getElementById("rE"),
+      document.getElementById("rF")
+    ];
+
+    const values = spans.map(span => span.textContent);
+
+    // Shuffle values
+    for (let i = values.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [values[i], values[j]] = [values[j], values[i]];
+    }
+
+    // Reassign shuffled values
+    spans.forEach((span, i) => {
+      span.textContent = values[i];
+    });
+  }
+
+    function move(reel, dir) {
+      reels[reel] = (reels[reel] + dir + symbols.length) % symbols.length;
+      document.getElementById("result").textContent = "";
+      updateDisplay();
+    }
+
+    function validateCombination() {
+    const match = reels.every((v, i) => v === correct[i]);
+
+    document.getElementById("result").textContent = match
+      ? "Correct! 54 = LIV"
+      : "This is not the correct number.";
+
+    // Reset reels to starting position
+    reels[0] = 0;
+    reels[1] = 0;
+    reels[2] = 0;
+
+    shuffleStoryNumerals();
+    updateDisplay();
+    }
+  </script>
+
+</body>
+</html>

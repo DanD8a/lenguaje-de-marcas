@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id=boton1 onclick=pulsar() name="subject" type="submit" value="Juan">Juan</button>
+    <button id=boton2 onclick=pulsar() name="subject" type="submit" value="Flor">Flor</button>
+    <button id=boton3 onclick=pulsar() name="subject" type="submit" value="Lucas">Lucas</button>
+    <button id=boton4 onclick=pulsar() name="subject" type="submit" value="Leopoldo">Leopoldo</button>
+    <div id="texto"></div>
+
+    <script>
+        function pulsar(){
+            let nombre = document.getElementById("boton1");
+            document.getElementById("texto").innerText="Hola "+nombre.value;
+        }
+    </script>
+</body>
+</html>

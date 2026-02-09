@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .celdanegra{
+            background-color: black;
+            padding:25px;
+            color:white;
+            font-size: 50px;
+        }
+        .celdablanca{
+            padding:25px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <table style="border: 1px solid black;">
+        <script>
+            for(let filas=0;filas<8;filas++){
+                document.write("<tr>");
+                if(filas%2!=0){
+                    for(let columna=0;columna<8;columna++){
+                        if(columna%2==0){
+                            if(filas==7 && (columna==0 || columna==7)){
+                                document.write("<td class='celdanegra'>"+"T"+"</td>");
+                            }else if(filas==7 && (columna==1 || columna==6)){
+                                document.write("<td class='celdanegra'>"+"C"+"</td>");
+                            }else if(filas==1){
+                                document.write("<td class='celdanegra'>"+"P"+"</td>");
+                            }else if(filas==7 && (columna==2 || columna==5)){
+                                document.write("<td class='celdanegra'>"+"A"+"</td>");
+                            }else if(filas==7 && (columna==4)){
+                                document.write("<td class='celdanegra'>"+"R"+"</td>");
+                            }else{
+                                document.write("<td class='celdanegra'>"+"&nbsp"+"</td>");
+                            }  
+                            
+                        }else{
+                            if(filas==7 && (columna==0 || columna==7)){
+                                document.write("<td class='celdablanca'>"+"T"+"</td>");
+                            }else if(filas==7 && (columna==1 || columna==6)){
+                                 document.write("<td class='celdablanca'>"+"C"+"</td>");
+                            }else if(filas==1){
+                                document.write("<td class='celdablanca'>"+"P"+"</td>");
+                            }else if(filas==7 && (columna==2 || columna==5)){
+                                document.write("<td class='celdablanca'>"+"A"+"</td>");
+                            }else if(filas==7 && (columna==3)){
+                                document.write("<td class='celdablanca'>"+"M"+"</td>");
+                            }else{
+                                document.write("<td class='celdablanca'>"+"&nbsp"+"</td>");
+                            }
+                        } 
+                    }
+                    //Columnas impares
+                }else{
+                    for(let columna=0;columna<8;columna++){
+                        if(columna%2!=0){
+                            if(filas==0 && (columna==0 || columna==7)){
+                                document.write("<td class='celdanegra'>"+"T"+"</td>");
+                            }else if(filas==0 && (columna==1 || columna==6)){
+                                 document.write("<td class='celdanegra'>"+"C"+"</td>");
+                            }else if(filas==0 && (columna==2 || columna==5)){
+                                document.write("<td class='celdanegra'>"+"A"+"</td>");
+                            }else if(filas==6){
+                                document.write("<td class='celdanegra'>"+"P"+"</td>");
+                            }else if(filas==0 && (columna==3)){
+                                document.write("<td class='celdanegra'>"+"M"+"</td>");
+                            }else{
+                                document.write("<td class='celdanegra'>"+"&nbsp"+"</td>");
+                            }
+                            
+                        }else{
+                            if(filas==0 && (columna==0 || columna==7)){
+                                document.write("<td class='celdablanca'>"+"T"+"</td>");
+                            }else if(filas==0 && (columna==1 || columna==6)){
+                                 document.write("<td class='celdablanca'>"+"C"+"</td>");
+                            }else if(filas==0 && (columna==2 || columna==5)){
+                                document.write("<td class='celdablanca'>"+"A"+"</td>");
+                            }else if(filas==6){
+                                document.write("<td class='celdablanca'>"+"P"+"</td>");
+                            }else if(filas==0 && (columna==4)){
+                                document.write("<td class='celdablanca'>"+"R"+"</td>");
+                            }else{
+                                document.write("<td class='celdablanca'>"+"&nbsp"+"</td>");
+                            }
+                        }
+                    }
+                }
+                document.write("</tr>")
+            }
+        </script>
+    </table>
+</body>
+</html>
